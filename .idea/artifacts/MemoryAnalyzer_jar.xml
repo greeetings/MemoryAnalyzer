@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="MemoryAnalyzer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/MemoryAnalyzer_jar</output-path>
+    <root id="archive" name="MemoryAnalyzer.jar">
+      <element id="module-output" name="MemoryAnalyzer" />
+      <element id="extracted-dir" path="E:/Downloads/postgresql-42.2.14.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
