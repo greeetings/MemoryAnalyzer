@@ -101,7 +101,7 @@ public class MemoryAnalyzer {
 
         File workDir = new File(MemoryAnalyzer.class.getProtectionDomain().getCodeSource().getLocation().getPath());
         try {
-            FileInputStream propsFile = new FileInputStream(workDir.getParent() + "\\config.properties");
+            FileInputStream propsFile = new FileInputStream(workDir.getParent() + "/config.properties");
             Properties prop = new Properties();
             prop.load(propsFile);
             db_driver = prop.getProperty("db_driver").trim();
