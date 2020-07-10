@@ -99,24 +99,21 @@ public class MemoryAnalyzer {
         String login = null;
         String password = null;
 
-        InputStream is;
-        Properties prop = new Properties();
-
-
+        File workDir = new File(MemoryAnalyzer.class.getProtectionDomain().getCodeSource().getLocation().getPath());
         try {
-            is = MemoryAnalyzer.class.getClassLoader().getResourceAsStream("config.properties");
-            prop.load(is);
-
-            db_driver = prop.getProperty("db_driver");
-            db_connection = prop.getProperty("db_connection");
-            login = prop.getProperty("login");
-            password = prop.getProperty("password");
-
+            FileInputStream propsFile = new FileInputStream(workDir.getParent() + "\\config.properties");
+            Properties prop = new Properties();
+            prop.load(propsFile);
+            db_driver = prop.getProperty("db_driver").trim();
+            db_connection = prop.getProperty("db_connection").trim();
+            login = prop.getProperty("login").trim();
+            password = prop.getProperty("password").trim();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
 
         Connection dbConnection = null;
